@@ -1,7 +1,7 @@
 {
   "name": "react-typescript-webpack",
   "version": "1.0.0",
-  "description": "React v19+ with TypeScript, Webpack 5, and TailwindCSS v4.1+",
+  "description": "React v19+ with TypeScript v5.9+, Webpack 5+, and TailwindCSS v4.1+, Shadcn/ui, Radix UI Components, Lucide React Icons, Class Variance Authority",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --mode development",

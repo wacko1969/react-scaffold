@@ -3,6 +3,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { fileURLToPath } from 'url';
 import SpeedMeasurePlugin from 'speed-measure-webpack-v5-plugin';
+import webpack from 'webpack';
 
 const smp = new SpeedMeasurePlugin({ disable: false });
 const __filename = fileURLToPath(import.meta.url);
@@ -10,7 +11,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const config = {
   entry: './src/index.tsx',
-  devtool: 'eval-source-map',
+  devtool: false,
   stats: {
     errorDetails: true,
   },
@@ -69,6 +70,10 @@ const config = {
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
       chunkFilename: '[name].[contenthash].chunk.css',
+    }),
+    new webpack.SourceMapDevToolPlugin({
+      filename: '[file].map',
+      exclude: /vendor/,
     }),
   ],
   devServer: {

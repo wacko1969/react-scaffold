@@ -43,9 +43,10 @@ function About() {
         <h3 className="font-semibold text-blue-900">Getting Started</h3>
         <ul className="mt-3 space-y-2 text-sm text-blue-800">
           <li>• Run `npm install` to install dependencies</li>
-          <li>• Run `npm run dev` to start development server</li>
-          <li>• Run `npm run build` to build for production</li>
-          <li>• Run `npm run lint` to check code quality</li>
+          <li>• Run `npm start` to start development server</li>
+          <li>• Run `npm run build:dev` to build for development</li>
+          <li>• Run `npm run build:prod` to build for production</li>
+          <li>• Look at Package.json for more</li>
         </ul>
       </div>
       <div>
