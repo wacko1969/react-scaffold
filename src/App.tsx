@@ -1,4 +1,4 @@
-import { About, Home } from '@pages';
+import { About, Home, Samples } from '@pages';
 import { Link, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -15,6 +15,12 @@ function App() {
                 Home
               </Link>
               <Link
+                to="/samples"
+                className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900"
+              >
+                Samples
+              </Link>
+              <Link
                 to="/about"
                 className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900"
               >
@@ -29,6 +35,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/samples" element={<Samples />} />
         </Routes>
       </main>
     </div>
