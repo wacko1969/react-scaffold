@@ -2,21 +2,6 @@ import { MyButton, MyTooltip, MyTooltipContent, MyTooltipTrigger } from '@compon
 import { PackageOpen } from 'lucide-react';
 
 function Samples() {
-  const technologies = [
-    'React v19+',
-    'TypeScript v5.9+',
-    'Webpack v5',
-    'esbuild-loader',
-    'TailwindCSS v4.1+',
-    'React Router DOM',
-    'Lucide React Icons',
-    'tailwind-merge',
-    'ESLint',
-    'Prettier',
-    "ShadCn/ui's Radix UI Components",
-    'Class Variance Authority',
-  ];
-
   return (
     <div className="space-y-8">
       <div className="text-center">
