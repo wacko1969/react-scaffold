@@ -1,4 +1,4 @@
-import { MyButton, Tooltip, TooltipContent, TooltipTrigger } from '@components';
+import { MyButton, MyTooltip, MyTooltipContent, MyTooltipTrigger } from '@components';
 import { Package } from 'lucide-react';
 
 function About() {
@@ -50,14 +50,14 @@ function About() {
         </ul>
       </div>
       <div>
-        <Tooltip>
-          <TooltipTrigger asChild>
+        <MyTooltip>
+          <MyTooltipTrigger asChild>
             <MyButton variant="primary">Hover Button</MyButton>
-          </TooltipTrigger>
-          <TooltipContent side="right">
+          </MyTooltipTrigger>
+          <MyTooltipContent side="right">
             <p>You are hovering</p>
-          </TooltipContent>
-        </Tooltip>{' '}
+          </MyTooltipContent>
+        </MyTooltip>
       </div>
     </div>
   );

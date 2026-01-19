@@ -1,2 +1,2 @@
 export { default as MyButton } from './MyButton/MyButton';
-export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/Tooltip';
+export { MyTooltip, MyTooltipContent, MyTooltipProvider, MyTooltipTrigger } from './ui/MyTooltip';

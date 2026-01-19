@@ -3,7 +3,7 @@ import React from 'react';
 
 import { cn } from '@utils';
 
-function TooltipProvider({
+function MyTooltipProvider({
   delayDuration = 0,
   ...props
 }: React.ComponentProps<typeof TooltipPrimitive.Provider>) {
@@ -16,19 +16,19 @@ function TooltipProvider({
   );
 }
 
-function Tooltip({ ...props }: React.ComponentProps<typeof TooltipPrimitive.Root>) {
+function MyTooltip({ ...props }: React.ComponentProps<typeof TooltipPrimitive.Root>) {
   return (
-    <TooltipProvider>
+    <MyTooltipProvider>
       <TooltipPrimitive.Root data-slot="tooltip" {...props} />
-    </TooltipProvider>
+    </MyTooltipProvider>
   );
 }
 
-function TooltipTrigger({ ...props }: React.ComponentProps<typeof TooltipPrimitive.Trigger>) {
+function MyTooltipTrigger({ ...props }: React.ComponentProps<typeof TooltipPrimitive.Trigger>) {
   return <TooltipPrimitive.Trigger data-slot="tooltip-trigger" {...props} />;
 }
 
-function TooltipContent({
+function MyTooltipContent({
   className,
   sideOffset = 0,
   children,
@@ -52,4 +52,4 @@ function TooltipContent({
   );
 }
 
-export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger };
+export { MyTooltip, MyTooltipContent, MyTooltipProvider, MyTooltipTrigger };
