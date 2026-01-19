@@ -22,6 +22,9 @@
       "@components": ["./src/components"],
       "@assets": ["./src/assets"],
       "@pages": ["./src/pages"],
+      "@hooks": ["./src/hooks"],
+      "@ui": ["./src/ui"],
+      "@lib": ["./src/lib"],
       "@styles": ["./src/styles"],
       "@utils": ["./src/utils"]
     }

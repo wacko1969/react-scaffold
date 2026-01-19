@@ -1,4 +1,4 @@
-import { MyButton } from '@components';
+import { MyButton, Tooltip, TooltipContent, TooltipTrigger } from '@components';
 import { Package } from 'lucide-react';
 
 function About() {
@@ -13,6 +13,8 @@ function About() {
     'tailwind-merge',
     'ESLint',
     'Prettier',
+    "ShadCn/ui's Radix UI Components",
+    'Class Variance Authority',
   ];
 
   return (
@@ -47,7 +49,14 @@ function About() {
         </ul>
       </div>
       <div>
-        <MyButton>Does Nothing</MyButton>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <MyButton variant="primary">Hover Button</MyButton>
+          </TooltipTrigger>
+          <TooltipContent side="right">
+            <p>You are hovering</p>
+          </TooltipContent>
+        </Tooltip>{' '}
       </div>
     </div>
   );

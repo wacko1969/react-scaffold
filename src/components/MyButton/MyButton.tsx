@@ -12,7 +12,7 @@ const variantClasses = {
 };
 const MyButton = ({ variant = 'primary', className, ...props }: MyButtonProps) => {
   return (
-    <button className={cn(variantClasses[variant], className)} {...props}>
+    <button className={cn(variantClasses[variant], 'rounded-xl p-4', className)} {...props}>
       {props.children}
     </button>
   );
