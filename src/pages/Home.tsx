@@ -1,5 +1,6 @@
+import { Shadcn } from '@assets';
+import { cn } from '@utils';
 import { Code, Heart, Zap } from 'lucide-react';
-import { twMerge } from 'tailwind-merge';
 
 function Home() {
   const features = [
@@ -21,6 +22,12 @@ function Home() {
       description: 'Fully typed for better developer experience',
       color: 'text-blue-500',
     },
+    {
+      svg: Shadcn,
+      title: 'Shadcn/ui',
+      description: 'Includes examples using Shadcn/ui components',
+      color: 'text-purple-500',
+    },
   ];
 
   return (
@@ -34,15 +41,24 @@ function Home() {
         </p>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-3">
+      <div className="grid grid-cols-4 gap-4">
         {features.map((feature) => {
           const Icon = feature.icon;
+          const Svg = feature.svg;
           return (
             <div
               key={feature.title}
               className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
             >
-              <Icon className={twMerge('h-12 w-12', feature.color)} />
+              {Icon ? (
+                <Icon className={cn('h-12 w-12', feature.color)} />
+              ) : Svg ? (
+                <img
+                  src={Svg}
+                  alt={`${feature.title} logo`}
+                  className={cn('h-12 w-12', feature.color)}
+                />
+              ) : null}
               <h3 className="mt-4 text-xl font-semibold text-gray-900">{feature.title}</h3>
               <p className="mt-2 text-gray-600">{feature.description}</p>
             </div>

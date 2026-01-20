@@ -1,4 +1,3 @@
-import { MyButton, MyTooltip, MyTooltipContent, MyTooltipTrigger } from '@components';
 import { Package } from 'lucide-react';
 
 function About() {
@@ -48,16 +47,6 @@ function About() {
           <li>• Run `npm run build:prod` to build for production</li>
           <li>• Look at Package.json for more</li>
         </ul>
-      </div>
-      <div>
-        <MyTooltip>
-          <MyTooltipTrigger asChild>
-            <MyButton variant="primary">Hover Button</MyButton>
-          </MyTooltipTrigger>
-          <MyTooltipContent side="right">
-            <p>You are hovering</p>
-          </MyTooltipContent>
-        </MyTooltip>
       </div>
     </div>
   );

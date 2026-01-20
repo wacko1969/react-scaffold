@@ -9,6 +9,9 @@ const smp = new SpeedMeasurePlugin({ disable: false });
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+// eslint-disable-next-line no-undef
+const isDev = process.env.NODE_ENV !== 'production';
+
 const config = {
   entry: './src/index.tsx',
   devtool: false,
@@ -57,8 +60,15 @@ const config = {
         },
       },
       {
+        test: /\.(png|jpe?g|gif|webp|avif|svg)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/[name].[contenthash][ext]',
+        },
+      },
+      {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+        use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
     ],
   },
@@ -66,10 +76,6 @@ const config = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
       inject: 'body',
-    }),
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
-      chunkFilename: '[name].[contenthash].chunk.css',
     }),
     new webpack.SourceMapDevToolPlugin({
       filename: '[file].map',
@@ -98,6 +104,15 @@ const config = {
   },
 };
 
-const smpconfig = smp.wrap(config, ['MiniCssExtractPlugin']);
+if (!isDev) {
+  config.plugins.push(
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+      chunkFilename: '[name].[contenthash].chunk.css',
+    })
+  );
+}
+
+const smpconfig = smp.wrap(config);
 
 export default smpconfig;
